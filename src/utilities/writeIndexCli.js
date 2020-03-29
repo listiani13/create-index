@@ -56,10 +56,11 @@ export default (directoryPaths, options = {}) => {
 
     const indexCode = createIndexCode(siblings, {
       banner: options.banner,
-      config
+	  config,
+	  extensions: options.extensions
     });
 
-    const indexFilePath = path.resolve(directoryPath, 'index.js');
+    const indexFilePath = path.resolve(directoryPath, `index.${options.extensions[0].includes('x') ? options.extensions[0].replace('x','') : options.extensions[0]}`);
 
     try {
       existingIndexCode = fs.readFileSync(indexFilePath, 'utf8');

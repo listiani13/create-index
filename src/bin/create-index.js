@@ -67,11 +67,12 @@ const argv = yargs
   )
   .argv;
 
+//   TODO: Add example & docs in help
 writeIndexCli(argv._, {
   banner: argv.banner,
   extensions: argv.extensions,
   ignoreDirectories: argv.ignoreDirectories,
   ignoreUnsafe: argv.ignoreUnsafe,
   recursive: argv.recursive,
-  updateIndex: argv.update
+  updateIndex: argv.update,
 });
